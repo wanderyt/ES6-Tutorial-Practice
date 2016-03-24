@@ -11,3 +11,26 @@
 ## install babel
 
     $ npm install babel babel-core --save-dev
+
+## eslint for es6
+
+添加`.eslintrc`文件到项目根目录下，并编辑eslint的设置。
+
+```json
+{
+  "globals": {
+    "jQuery": true,
+    "$": true
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "rules": {
+    "quotes": [1, "double"]
+  }
+}
+```
+
+environment中设置es6为true，就会看到对es6的支持，比如反引号（`）的出现就不会报错了。
