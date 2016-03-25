@@ -20,3 +20,28 @@ function codePointLength(text) {
 var s = "𠮷𠮷";
 s.length // 4
 codePointLength(s) // 2
+
+// y修饰符
+var s = 'aaa_aa_a';
+var r1 = /a+/g;
+var r2 = /a+/y;
+
+r1.exec(s) // ["aaa"]
+r2.exec(s) // ["aaa"]
+
+r1.exec(s) // ["aa"]
+r2.exec(s) // null
+
+// y in split
+var str = "#x#";
+str.split(/#/g); // ["", "x", ""]
+str.split(/#/y); // ["", "x#"]
+
+var REGEX = /a/gy;
+"aaxa".replace(REGEX, "-") // '--xa'
+
+/abc/ig.source
+// "abc"
+
+/abc/ig.flags
+// "gi"
