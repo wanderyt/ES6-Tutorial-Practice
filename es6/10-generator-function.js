@@ -58,4 +58,39 @@ var g = generator();
 g.next();
 g.throw();
 g.next();
+
+// ------------- Comparison -------------//
+
+var generator = function* () {
+  try {
+    yield 1;
+    yield 2;
+  } catch(e) {
+    console.log("catch exception...");
+  } finally {
+    yield 3;
+  }
+};
+var g = generator();
+g.next(); // Object {value: 1, done: false}
+g.throw();
+// catch exception...
+// Object {value: 3, done: false}
+g.next();
+// Object {value: undefined, done: true}
+
+// ------------- Comparison -------------//
+var generator = function* () {
+  try {
+    yield 1;
+    yield 2;
+  } catch(e) {
+    console.log("catch exception...");
+  } finally {
+    yield 3;
+  }
+};
+var g = generator();
+g.throw(); // Uncaught error: undefined
+g.next(); // Object {value: undefined, done: true}
 // ==================================================
