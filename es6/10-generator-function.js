@@ -94,3 +94,14 @@ var g = generator();
 g.throw(); // Uncaught error: undefined
 g.next(); // Object {value: undefined, done: true}
 // ==================================================
+
+var generator = function* () {
+  var result = yield 12 + yield 23;
+  console.log(result);
+}
+
+var g = generator();
+g.next();
+g.next(44);
+g.next();
+
