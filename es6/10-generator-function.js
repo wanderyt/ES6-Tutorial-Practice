@@ -103,5 +103,6 @@ var generator = function* () {
 var g = generator();
 g.next();
 g.next(44);
-g.next();
-
+g.next(11);
+// 55
+// Object {value: undefined, done: true}
