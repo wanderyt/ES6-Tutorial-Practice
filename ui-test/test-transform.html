@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style type="text/css">
+    body {
+        perspective: 1200px;
+    }
+    div {
+        width: 100px;
+        height: 75px;
+        background-color: yellow;
+        border: 1px solid black;
+    }
+    #div2 {
+        margin-left: 100px;
+        transform: scale(2,1);
+    }
+    #div3 {
+        margin-left: 100px;
+        transform: rotate3d(1,1,1, 30deg);
+    }
+    #div4 {
+        margin-left: 100px;
+        transform: rotate3d(0,0,.9, 45deg);
+        transform-style: preserve-3d;
+    }
+    </style>
+</head>
+<body>
+    <div>div1</div>
+    <div id="div2">div2</div>
+    <div id="div3">div3</div>
+    <div id="div4">div4
+        <span>content</span>
+    </div>
+</body>
+</html>
